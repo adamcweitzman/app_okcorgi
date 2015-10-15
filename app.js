@@ -4,7 +4,8 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-
+var morgan = require('morgan');
+var mongoose = require('mongoose');
 var routes = require('./routes/index');
 
 var app = express();
@@ -21,6 +22,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+mongoose.connect(process.env.MONGO_DB_CONN_OK_CORGIDB);
 app.use('/', routes);
 
 // catch 404 and forward to error handler

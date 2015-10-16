@@ -6,7 +6,10 @@
       <img src="<%= picture %>" alt="<%= name %>" class="corgi-banner img-responsive">
       <br>
       <button id="paw-left">Paw Left</button>
-      <button id="paw-right">Paw Right</button>
+      <form style="display: inline" name="like_form" action="/" method="POST">
+      <input style="display: none" type="text" name="likes" value="<%= dog_id %>">
+      <input type="submit" name="submit" value="Paw Right">
+      </form>
     </div>
     <div class="col-md-4 col-sm-3 corgi-stats">
       <br>

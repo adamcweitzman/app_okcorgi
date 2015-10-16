@@ -12,7 +12,9 @@ body {
 }
 
 .main-corgi {
+	font-weight: bold;
 	color: blue;
+	text-shadow: 2px 2px 2px white;
 }
 
 .corgi-stats {

@@ -1,20 +1,25 @@
 <% include ./partials/header %>
 
   <section class="row">
-    <div class="col-md-6 col-md-offset-3 col-sm-10 col-sm-offset-1 main-corgi">
-      <h2>Do you like <%//= dogName %>Dr. Fluffington?</h2>
-      <img src="<%//= dogPic %>http://www.shanalogic.com/wordpress/wp-content/uploads2/2015/03/l-Professor-Corgi.jpg" alt="<%//= dogName %>Dr. Fluffington" class="corgi-banner img-responsive">
+    <div class="col-md-5 col-md-offset-2 col-sm-7 col-sm-offset-1 main-corgi">
+      <h2>Do you like <%= name %>?</h2>
+      <img src="<%= picture %>" alt="<%= name %>" class="corgi-banner img-responsive">
+      <br>
       <button id="paw-left">Paw Left</button>
       <button id="paw-right">Paw Right</button>
+    </div>
+    <div class="col-md-4 col-sm-3 corgi-stats">
+      <br>
+      <br>
+      <br>
+      <h3>Occupation: <br><br><%= occupation %><br><br> Age: <br><br><%= age %><br><br> Neutered: <br><br><%= neuter %></h3>
+      
     </div>
   </section>
 
   <section>
     <h3>Dogs You've Liked</h3>
-    <% for (var i = 0; i < dogs.length; i++) { %>
-      <h6><%//= dogs[i].dogName %></h6>
-      <img src="<%//= dogs[i].dogPic %>" class="corgi-profile">
-    <% } %>
+    
   </section>
 
 <% include ./partials/footer %>

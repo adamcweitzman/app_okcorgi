@@ -22,7 +22,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-mongoose.connect(process.env.MONGO_DB_CONN_OK_CORGIDB);
+mongoose.connect(process.env.MONGO_DB_CONN_OK_CORGI);
 app.use('/', routes);
 
 // catch 404 and forward to error handler

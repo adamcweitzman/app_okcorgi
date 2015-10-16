@@ -1,4 +1,34 @@
+body {
+	background-image: url('../images/CandyHearts.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	min-height: 672px;
+}
+
 .corgi-banner{
   max-width: 100%;
-  height: auto;
+  height: 350px;
+  border-radius: 50px;
+}
+
+.main-corgi {
+	color: blue;
+}
+
+.corgi-stats {
+	color: red;
+	text-shadow: 2px 2px 2px black;
+	font-weight: bold;
+}
+
+#header_title {
+	color: green;
+}
+
+.header_img {
+	max-width: 100%;
+  height: 200px;
+  border-radius: 50px;
+  margin-left: 10%;
+  display: inline;
 }

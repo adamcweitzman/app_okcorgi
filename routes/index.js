@@ -3,6 +3,7 @@ var router = express.Router();
 var Dog = require('../models/dog'); // get our mongoose model
 var Kyle = require('../models/user');
 var mongoose = require('mongoose');
+var response = "";
 
 
 
@@ -16,14 +17,6 @@ router.get('/dogs', function(req, res) {
     res.json(dogs);
   });
 }); 
-
-router.get('/kyle', function(req, res){
-	Kyle.find({}, function(err, kyles){
-		console.log(kyles);
-		res.json(kyles);
-	});
-});  
-
 
 router.get('/', function(req, res, next) {
 	Dog.count(function(err, count){
@@ -40,31 +33,19 @@ router.get('/', function(req, res, next) {
 		});
 
 });
-//   res.render('index', { title: 'Express', dogs: [] });
-// });
-var kyle_array = [];
+
 /* POST when the user "likes" a new Corgi. */
 router.post('/', function(req, res, next) {
 	var id = req.body.likes;
-	Kyle.find({}, function(err, kyles){
-		kyles[0]['likes'].push(id);
-		Kyle.collection.insert({likes: kyles[0]['likes']});
-	});
-	
-	// // // USE MONGOOSE TO SAVE A NEW COMPLIMENT TO THE DATABASE, THEN REDIRECT TO THE ROOT URL
-	res.redirect('/');
+	var query = {"_id": '562290bee4b0f1d92b9d5fae'};
+	var update = {$push: {likes: id}};
+	var options = {new: true};
+	Kyle.findOneAndUpdate(query, update, options, function(err, person) {
+  if (err) {
+    console.log('got an error');
+  }
 });
-
-
-
-
-router.get('/likes', function(req, res) {
-	Kyle.find({}, function(err, kyles){
-		console.log(kyles[0]['likes']);
-		kyles[0]['likes'].push('562036aae4b07cd9dd2d22f9');
-		console.log(kyles[0]['likes']);
-		res.json(kyles);
-	});
+	res.redirect('/');
 });
 
 module.exports = router;

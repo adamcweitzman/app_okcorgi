@@ -3,13 +3,12 @@
   <section class="row">
     <div class="col-md-3 col-md-offset-2 col-sm-5 col-sm-offset-1 main-corgi">
       <h3><%= dog_response %></h3>
-      <br>
       <h2>Add a dog!</h2>
       <img src="http://cdn-www.dailypuppy.com/media/dogs/anonymous/28160/20090604345100_Ryder029.jpg_w450.jpg" alt="bernese moutain dog" class="corgi-banner img-responsive">
     </div>
     <div class="col-md-4 col-sm-4 corgi_stats">
       <form class="new_dog_form" name="new_dog_form" action="/new_dog" method="POST">
-      	<br><br><br><br>
+      	<br><br><br>
         <input type="text" name="name" placeholder="Dog's name"><br><br>
         <input type="text" name="picture" placeholder="Picture Url"><br><br>
         <input type="text" name="occupation" placeholder="Occupation"><br><br>
@@ -20,5 +19,4 @@
       </form>
     </div>
   </section>
-  <a href="/">Index</a>
-<% include ./partials/footer %>
+  <% include ./partials/footer %>

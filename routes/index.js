@@ -66,7 +66,7 @@ router.post('/', function(req, res, next) {
 	var like = "";
 	Kyle.find({}, function(err, kyle) {
 		for(var i=0; i<kyle[0]['likes'].length; i++) {
-			if (kyle[0]['likes'][i] === id) {
+			if (kyle[0]['likes'][i] == id) {
 				like = i;
 			}
 		}

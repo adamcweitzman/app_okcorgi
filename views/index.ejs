@@ -6,7 +6,10 @@
       <h2>Do you like <%= name %>?</h2>
       <img src="<%= picture %>" alt="<%= name %>" class="corgi-banner img-responsive">
       <br>
-      <button id="paw-left">Paw Left</button>
+      <form style="display: inline" name="no_like_form" action="/no_like" method="POST">
+        <input style="display: none" type="text" name="not_like" value="You are a terrible human being!">
+        <input type="submit" name="submit" value="Paw Left">
+      </form>
       <form style="display: inline" name="like_form" action="/" method="POST">
         <input style="display: none" type="text" name="likes" value="<%= dog_id %>">
         <input type="submit" name="submit" value="Paw Right">

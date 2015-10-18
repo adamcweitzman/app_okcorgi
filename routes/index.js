@@ -60,6 +60,10 @@ router.get('/likely', function(req, res){
 	});
 });
 
+router.post('/no_like', function(req,res,next){
+	response = req.body.not_like;
+	res.redirect('/');
+});
 /* POST when the user "likes" a new Corgi. */
 router.post('/', function(req, res, next) {
 	var id = req.body.likes;

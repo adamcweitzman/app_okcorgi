@@ -6,6 +6,14 @@ body {
 	background-attachment: fixed;
 }
 
+.nav {
+	font-weight: bold;
+	font-size: 18px;
+	color: brown;
+	text-shadow: 1px 1px 1px white;
+	display:inline-block;
+}
+
 .new_dog_form {
 	border-radius: 5px;
 	color: red;

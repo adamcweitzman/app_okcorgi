@@ -22,8 +22,33 @@
   </section>
 
   <section>
-    <h3>Dogs You've Liked</h3>
-    
+    <h3 id="like_header">Dogs You've Liked</h3>
+    <ul id="like_list">
+      <% var like_array = [] %>
+      <% for(var i=0;i<dog.length;i++) { %>
+        <% for(var j=0;j<kyle[0]['likes'].length;j++) { %>
+          <% if(kyle[0]['likes'][j]==dog[i]['_id']) { %>
+            <% like_array.push(i) %>
+          <% } else { %>
+          <% } %>
+        <% } %>
+      <% } %>
+      <% for(var i=0; i<like_array.length; i++){%>
+      <li>
+        <section class="row">
+          <div class="col-md-3 col-md-offset-1 col-small-5 col-sm-offset-1 list-corgi">
+            <img src="<%= dog[like_array[i]]['picture'] %>" alt="<%= dog[like_array[i]]['name'] %>" class="corgi-list img-responsive">
+          </div>
+          <div class="col-md-5 col-small-7 info_list-corgi">
+            <p>Name: <%= dog[like_array[i]]['name'] %></p>
+            <p>Occupation: <%= dog[like_array[i]]['occupation'] %></p>
+            <p>Age: <%= dog[like_array[i]]['age'] %></p>
+            <p>Neutered?: <%= dog[like_array[i]]['neuter'] %></p>
+          </div>
+        </section>
+      </li>
+      <% } %>
+    </ul>
   </section>
 
 <% include ./partials/footer %>

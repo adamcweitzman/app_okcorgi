@@ -12,9 +12,13 @@ var response = "";
 /* GET home page. */
 router.get('/dogs', function(req, res) {
 	console.log('got to this');
+	var id_dog = [];
   Dog.find({}, function(err, dogs) {
   	console.log(dogs);
-    res.json(dogs);
+  	for (var i = 0; i < dogs.length; i++){
+  		id_dog.push(dogs[i]['_id']);
+  	}
+    res.json(id_dog);
   });
 }); 
 
@@ -26,7 +30,9 @@ router.get('/', function(req, res, next) {
 			}else{
 				var i = Math.floor(Math.random()*count);
 				Dog.find({},function(err, dog){
-					res.render('index', { title: 'Express', name: dog[i]['name'], picture: dog[i]['picture'], age: dog[i]['age'], occupation: dog[i]['occupation'], neuter: dog[i]['neuter'], dog_id: dog[i]['_id'], response: response });
+					Kyle.find({},function(err,kyle){
+					res.render('index', { title: 'Express', name: dog[i]['name'], picture: dog[i]['picture'], age: dog[i]['age'], occupation: dog[i]['occupation'], neuter: dog[i]['neuter'], dog_id: dog[i]['_id'], response: response, kyle: kyle, dog: dog });
+				});
 				});
 				
 			}
